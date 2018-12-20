@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>macaucfht</title>
+    <link rel="stylesheet" type="text/css" href="../static/common.css">
+    <link rel="stylesheet" type="text/css" href="../static/commonS.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/layui.css">
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/common.js"></script>
+    <script src="../static/layui.js"></script>
+     <script src="https://unpkg.com/wangeditor@3.1.0/release/wangEditor.min.js"></script>
+     <script src="../static/imgUp.js"></script>
+     <link href="https://cdn.bootcss.com/Swiper/3.4.2/css/swiper.css" rel="stylesheet">
+    <script src="https://cdn.bootcss.com/Swiper/3.4.2/js/swiper.jquery.min.js"></script>
+    <style>
+
+/*分页*/
+  .layui-laypage .layui-laypage-curr .layui-laypage-em{background-color:#ff4d00 !important;}
+  .layui-laypage>a:hover{color:#ff4d00 !important;}
+/*弹出框*/
+  .layui-layer-title{font-size: 20px !important;text-align: center !important;padding:0 !important;height:60px !important;line-height:60px !important;background:white !important;}
+  .layui-layer-btn{text-align:center !important;}
+  .layui-layer-btn .layui-layer-btn0{
+    line-height:40px !important;
+    height:40px !important;
+    margin:0 !important;
+    /*margin-right:35px !important;*/
+    background:#36c748 !important;
+    width:70px !important;
+    border:1px solid #36c748 !important;
+  }
+  .layui-layer-btn .layui-layer-btn1{
+    line-height:40px !important;
+    height:40px !important;
+    margin:0 !important;
+    width:70px !important;
+    color:#36c748 !important;
+    border:1px solid #36c748 !important;
+  }
+  .layui-layer-dialog .layui-layer-content{
+    font-size:20px !important;
+    color:#222222 !important;
+    /*padding:40px 0 !important;*/
+    text-align: center;
+     }
+     .layui-layer-btn{padding-bottom:40px !important;}
+/*小的弹出框样式 高度是179 宽度是340*/
+.layerssmall .layui-layer-dialog .layui-layer-content{
+    padding:24px 0 34px 0 !important;
+     }
+.layerssmall .layui-layer-btn .layui-layer-btn0{
+    margin-right:35px !important;
+  }
+.layerssmall .layui-layer-content{padding:35px 0 !important;}
+
+/*大的弹出框样式  高度是179 宽度是520*/
+.layersbig .layui-layer-dialog .layui-layer-content{
+    padding:40px 0 !important;
+     }
+.layersbig .layui-layer-btn .layui-layer-btn0{
+    margin-right:102px !important;
+  }
+/*30*/
+.layersmid>.layui-layer-content{
+    padding:30px 0 30px 0 !important;
+     }
+
+/*msg的样式*/
+.layui-layer-msg .layui-layer-content{background:black !important;color:white !important;opacity: 1 !important}
+/*表格*/
+ .layui-table td{border-top:none !important;border-bottom:none !important;}
+table{border:1px solid #d2d2d2 !important;}
+tr,th{height:60px !important;text-align:center !important;color: #222222 !important;}
+th{font-size:18px !important;border:none !important;}
+tr{font-size:16px !important;}
+tbody>tr:nth-child(2n){background:#f5f5f5 !important;}
+
+.waiceng{padding:16px 20px 16px 0;}
+.youceng{padding-right:20px;}
+</style>
+  </head>
+  <body>
+    <div id="app" ></div>
+    <!-- built files will be auto injected -->
+ <script  >
+var editor
+ </script>
+  </body>
+</html>
