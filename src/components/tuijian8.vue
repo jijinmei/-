@@ -156,65 +156,65 @@ export default {
         
     },
     // 删除
-    deleteds(){
-      var that=this;
-        if(this.dengpao==true){
-          var objectid=''
-        var ids=$('.dengp[srcs="../assets/img/yx.png"]')
-        for (var i = 0; i < ids.length; i++) {
-          var b='|'
-          if(i==0){
-            b=''
-          }
-          objectid+=b+$(ids[i]).attr('ids')
-        }
-        console.log(objectid)
-        // return
+    // deleteds(){
+    //   var that=this;
+    //     if(this.dengpao==true){
+    //       var objectid=''
+    //     var ids=$('.dengp[srcs="../assets/img/yx.png"]')
+    //     for (var i = 0; i < ids.length; i++) {
+    //       var b='|'
+    //       if(i==0){
+    //         b=''
+    //       }
+    //       objectid+=b+$(ids[i]).attr('ids')
+    //     }
+    //     console.log(objectid)
+    //     // return
 
-       layui.use('layer', function(){
-       var layer = layui.layer;
-            layer.confirm('確認刪除?',{
-              closeBtn:0,
-              title:false,
-              area: ['340px'],
-              skin: 'layerssmall',
-              btn: ['刪除','取消'], //可以无限个按钮
-              yes: function(index, layero){
-                  console.log("我是刪除按钮"); //如果设定了yes回调，需进行手工关闭
-                  $.ajax({
-                headers:{'token':sessiontoken},
-                 type: "DELETE",
-                 url: Boss+'boss/report/remove',
-                 data:{'ids':objectid},
-                 dataType: "json",
-                 success: function(data){
-                             if(data.status){
-                                   //清除删除后的数据
-                                    // that.https(that.page)
-                                     that.pages(that.page)
-                                    that.dengpao=false;
-                                    $('.dengp').attr('src',require('../assets/img/wx.png'))
-                                  layer.close(index); //如果设定了yes回调，需进行手工关闭
-                             }else{
-                                  layui.use('layer', function(){
-                                    var layer = layui.layer;
-                                    layer.msg(data.message);
-                                  });   
-                             }
-                          }
-             });
+    //    layui.use('layer', function(){
+    //    var layer = layui.layer;
+    //         layer.confirm('確認刪除?',{
+    //           closeBtn:0,
+    //           title:false,
+    //           area: ['340px'],
+    //           skin: 'layerssmall',
+    //           btn: ['刪除','取消'], //可以无限个按钮
+    //           yes: function(index, layero){
+    //               console.log("我是刪除按钮"); //如果设定了yes回调，需进行手工关闭
+    //               $.ajax({
+    //             headers:{'token':sessiontoken},
+    //              type: "DELETE",
+    //              url: Boss+'boss/report/remove',
+    //              data:{'ids':objectid},
+    //              dataType: "json",
+    //              success: function(data){
+    //                          if(data.status){
+    //                                //清除删除后的数据
+    //                                 // that.https(that.page)
+    //                                  that.pages(that.page)
+    //                                 that.dengpao=false;
+    //                                 $('.dengp').attr('src',require('../assets/img/wx.png'))
+    //                               layer.close(index); //如果设定了yes回调，需进行手工关闭
+    //                          }else{
+    //                               layui.use('layer', function(){
+    //                                 var layer = layui.layer;
+    //                                 layer.msg(data.message);
+    //                               });   
+    //                          }
+    //                       }
+    //          });
                                                 
                   
-              },
-              btn2: function(layero){
-                console.log("我是取消按钮"); //
-              }
+    //           },
+    //           btn2: function(layero){
+    //             console.log("我是取消按钮"); //
+    //           }
             
 
-            });
-      })
-        }
-    },
+    //         });
+    //   })
+    //     }
+    // },
     // 勾选
     tocheckall(e){
            if(this.dengpao==false){
@@ -234,34 +234,17 @@ export default {
     },
     tocheck(e,objectId){
            this.objectIds=objectId
-           if($(e.currentTarget).attr('srcs')=='../assets/img/wx.png'){
-               $(e.currentTarget).attr('src',require('../assets/img/yx.png'))
-               $(e.currentTarget).attr('srcs','../assets/img/yx.png')
-               // this.dengpao=true
-
-           }else{
-               // $(e.currentTarget).attr('src',require('../assets/img/wx.png'))
-               // $(e.currentTarget).attr('srcs','../assets/img/wx.png')
-               // if($('.dengp[srcs="../assets/img/yx.png"]').length>0){
-               //    this.dengpao=true
-               // }else{
-               //  this.dengpao=false
-               // }
-               this.deleteds2()
-           }
+            this.deleteds2()
            // if($(e.currentTarget).attr('srcs')=='../assets/img/wx.png'){
            //     $(e.currentTarget).attr('src',require('../assets/img/yx.png'))
            //     $(e.currentTarget).attr('srcs','../assets/img/yx.png')
-           //     this.dengpao=true
+            
+
            // }else{
-           //     $(e.currentTarget).attr('src',require('../assets/img/wx.png'))
-           //     $(e.currentTarget).attr('srcs','../assets/img/wx.png')
-           //     if($('.dengp[srcs="../assets/img/yx.png"]').length>0){
-           //        this.dengpao=true
-           //     }else{
-           //      this.dengpao=false
-           //     }
+    
+           //     this.deleteds2()
            // }
+         
     },
     // 点击楼盘名字跳去详情页面
     goxiangqing(objectId,item){

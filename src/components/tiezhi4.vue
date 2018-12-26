@@ -52,7 +52,7 @@
       <tbody>
         <tr v-for="(item,index) in datas" class="yonghu">
          <td class='padding0 cursor center'>
-             <img @click="tocheck($event)" :ids="item.objectId" srcs="../assets/img/wx.png"  src="../assets/img/wx.png" alt="" class="w28 dengp">
+             <img @click="tocheck($event)" :ids="item.objectId" srcs="no"  src="../assets/img/wx.png" alt="" class="w28 dengp">
           </td>
           <!-- @click="goxiangqing(item.objectId)" -->
           <td  class='padding0 c36c748 cursor left'>  
@@ -174,7 +174,7 @@ export default {
       var that=this;
         if(this.dengpao==true){
           var objectid=''
-        var ids=$('.dengp[srcs="../assets/img/yx.png"]')
+        var ids=$('.dengp[srcs="yes"]')
         // for (var i = 0; i < ids.length; i++) {
         //   var b='|'
         //   if(i==0){
@@ -209,6 +209,7 @@ export default {
                                   that.pages(that.page)
                                     that.dengpao=false;
                                     $('.dengp').attr('src',require('../assets/img/wx.png'))
+                                     $('.dengp').attr('srcs','no')
                                   layer.close(index); //如果设定了yes回调，需进行手工关闭
                     }else{
                                            layui.use('layer', function(){
@@ -237,32 +238,64 @@ export default {
       })
         }
     },
-    // 勾选
+    // // 勾选
+    // tocheckall(e){
+    //        if(this.dengpao==false){
+    //            // $(e.currentTarget).attr('src',require('../assets/img/yx.png'))
+    //            // $(e.currentTarget).attr('srcs','../assets/img/yx.png')
+    //            $('.dengp').attr('src',require('../assets/img/yx.png'))
+    //            $('.dengp').attr('srcs','../assets/img/yx.png')
+    //            this.dengpao=true
+    //        }else{
+    //            // $(e.currentTarget).attr('src',require('../assets/img/wx.png'))
+    //            // $(e.currentTarget).attr('srcs','../assets/img/wx.png')
+    //            $('.dengp').attr('src',require('../assets/img/wx.png'))
+    //            $('.dengp').attr('srcs','../assets/img/wx.png')
+    //             this.dengpao=false
+               
+    //        }
+    // },
+    //  tocheck(e){
+    //        if($(e.currentTarget).attr('srcs')=='../assets/img/wx.png'){
+    //            $(e.currentTarget).attr('src',require('../assets/img/yx.png'))
+    //            $(e.currentTarget).attr('srcs','../assets/img/yx.png')
+    //            this.dengpao=true
+    //        }else{
+    //            $(e.currentTarget).attr('src',require('../assets/img/wx.png'))
+    //            $(e.currentTarget).attr('srcs','../assets/img/wx.png')
+    //            if($('.dengp[srcs="../assets/img/yx.png"]').length>0){
+    //               this.dengpao=true
+    //            }else{
+    //             this.dengpao=false
+    //            }
+    //        }
+    // },
+     // 勾选
     tocheckall(e){
            if(this.dengpao==false){
                // $(e.currentTarget).attr('src',require('../assets/img/yx.png'))
                // $(e.currentTarget).attr('srcs','../assets/img/yx.png')
                $('.dengp').attr('src',require('../assets/img/yx.png'))
-               $('.dengp').attr('srcs','../assets/img/yx.png')
+               $('.dengp').attr('srcs','yes')
                this.dengpao=true
            }else{
                // $(e.currentTarget).attr('src',require('../assets/img/wx.png'))
                // $(e.currentTarget).attr('srcs','../assets/img/wx.png')
                $('.dengp').attr('src',require('../assets/img/wx.png'))
-               $('.dengp').attr('srcs','../assets/img/wx.png')
+               $('.dengp').attr('srcs','no')
                 this.dengpao=false
                
            }
     },
-     tocheck(e){
-           if($(e.currentTarget).attr('srcs')=='../assets/img/wx.png'){
+    tocheck(e){
+           if($(e.currentTarget).attr('srcs')=='no'){
                $(e.currentTarget).attr('src',require('../assets/img/yx.png'))
-               $(e.currentTarget).attr('srcs','../assets/img/yx.png')
+               $(e.currentTarget).attr('srcs','yes')
                this.dengpao=true
            }else{
                $(e.currentTarget).attr('src',require('../assets/img/wx.png'))
-               $(e.currentTarget).attr('srcs','../assets/img/wx.png')
-               if($('.dengp[srcs="../assets/img/yx.png"]').length>0){
+               $(e.currentTarget).attr('srcs','no')
+               if($('.dengp[srcs="yes"]').length>0){
                   this.dengpao=true
                }else{
                 this.dengpao=false

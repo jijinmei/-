@@ -45,7 +45,7 @@
 </span>
 
 
-    <span  class="f18 cbbbbbb mL10 relative" :style="{'top':imgUrl.length==0?'0':'-15px'}"> 建議上傳640*{{this.$route.params.indexs==0?'350':'385'}}PX的圖片 </span>                               
+    <span  class="f18 cbbbbbb mL10 relative" :style="{'top':imgUrl.length==0?'0':'-15px'}"> 建議上傳640*{{this.$route.params.indexs==0?'320':'385'}}PX的圖片 </span>                               
     </div>
   </div>
   </form>
